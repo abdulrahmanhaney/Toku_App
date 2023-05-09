@@ -9,7 +9,7 @@ class ItemPharses extends StatelessWidget {
   });
 
   PhrasesModel itemData;
-  
+  AudioPlayer player = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,6 @@ class ItemPharses extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: () async {
-              AudioPlayer player = AudioPlayer();
               player.audioCache.prefix = 'assets/sounds/phrases/';
               await player.play(AssetSource(itemData.sound));
             },

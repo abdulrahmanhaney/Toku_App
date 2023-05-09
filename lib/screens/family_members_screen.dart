@@ -70,7 +70,7 @@ class FamilyMembersScreen extends StatelessWidget {
       jpText: 'Otōto',
       bgColor: KFamilyColor,
       image: 'assets/images/family_members/family_younger_brother.png',
-      sound: 'youngerbrother.wav',
+      sound: 'youngerbrohter.wav',
     ),
     ItemModel(
       enText: 'Younger Sister',

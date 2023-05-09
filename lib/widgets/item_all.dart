@@ -8,6 +8,8 @@ class ItemAll extends StatelessWidget {
   ItemModel itemData;
   String kind;
 
+  AudioPlayer player = AudioPlayer();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,7 +65,6 @@ class ItemAll extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: () async {
-              AudioPlayer player = AudioPlayer();
               player.audioCache.prefix = 'assets/sounds/$kind/';
               await player.play(AssetSource(itemData.sound));
             },
