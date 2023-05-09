@@ -22,6 +22,8 @@ class TokuApp extends StatelessWidget {
         useMaterial3: true,
         appBarTheme: const AppBarTheme(
           backgroundColor: KPrimaryColor,
+          shadowColor: KPrimaryColor,
+          elevation: 4,
           iconTheme: IconThemeData(color: Colors.white),
           titleTextStyle: TextStyle(
             color: Colors.white,
@@ -33,8 +35,8 @@ class TokuApp extends StatelessWidget {
       routes: {
         SplashScreen.id: (context) => const SplashScreen(),
         HomeScreen.id: (context) => const HomeScreen(),
-        NumbersScreen.id: (context) => const NumbersScreen(),
-        FamilyMembersScreen.id: (context) => const FamilyMembersScreen(),
+        NumbersScreen.id: (context) => NumbersScreen(),
+        FamilyMembersScreen.id: (context) => FamilyMembersScreen(),
         ColorsScreen.id: (context) => const ColorsScreen(),
         PhrasesScreen.id: (context) => const PhrasesScreen(),
       },

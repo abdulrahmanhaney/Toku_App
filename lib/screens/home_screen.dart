@@ -5,7 +5,7 @@ import 'package:toku_app/screens/family_members_screen.dart';
 import 'package:toku_app/screens/numbers_screen.dart';
 import 'package:toku_app/screens/pharses_screen.dart';
 
-import '../widgets/home/home_item.dart';
+import '../widgets/home_item.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

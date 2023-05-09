@@ -20,6 +20,14 @@ class HomeItem extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: color.withOpacity(0.4),
+              spreadRadius: 4,
+              blurRadius: 4,
+              offset: const Offset(0, 0), // changes position of shadow
+            ),
+          ],
           color: color,
           borderRadius: BorderRadius.circular(10),
         ),
