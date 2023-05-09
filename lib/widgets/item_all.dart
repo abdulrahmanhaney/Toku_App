@@ -15,7 +15,7 @@ class ItemAll extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
-          color: itemData.bgColor.withOpacity(0.4),
+          color: itemData.bgColor.withOpacity(0.3),
           spreadRadius: 4,
           blurRadius: 4,
           offset: const Offset(0, 0), // changes position of shadow
@@ -25,14 +25,19 @@ class ItemAll extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            decoration: BoxDecoration(
-                color: const Color(0xffFEF3D7),
-                borderRadius: BorderRadius.circular(10)),
             height: 70,
             width: 70,
-            child: Image.asset(
-              itemData.image,
-              height: 60,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: const Color(0xffFEF3D7),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10),
+                bottomLeft: Radius.circular(10),
+              ),
+            ),
+            child: Image(
+              image: AssetImage(itemData.image),
+              height: 50,
             ),
           ),
           const SizedBox(
@@ -48,7 +53,7 @@ class ItemAll extends StatelessWidget {
                     fontFamily: 'MFM', color: Colors.white, fontSize: 18),
               ),
               Text(
-                itemData.enText,
+                itemData.enText.toLowerCase(),
                 style: const TextStyle(
                     fontFamily: 'MFR',
                     color: Color.fromARGB(206, 255, 255, 255),

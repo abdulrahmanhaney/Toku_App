@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
             ScreenId: ColorsScreen.id,
           ),
           HomeItem(
-            color: KpharsesColor,
+            color: KPharsesColor,
             text: 'Phrases',
             ScreenId: PhrasesScreen.id,
           ),

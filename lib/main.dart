@@ -37,8 +37,8 @@ class TokuApp extends StatelessWidget {
         HomeScreen.id: (context) => const HomeScreen(),
         NumbersScreen.id: (context) => NumbersScreen(),
         FamilyMembersScreen.id: (context) => FamilyMembersScreen(),
-        ColorsScreen.id: (context) => const ColorsScreen(),
-        PhrasesScreen.id: (context) => const PhrasesScreen(),
+        ColorsScreen.id: (context) =>  ColorsScreen(),
+        PhrasesScreen.id: (context) =>  PhrasesScreen(),
       },
       initialRoute: SplashScreen.id,
     );
