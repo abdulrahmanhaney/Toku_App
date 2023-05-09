@@ -2,12 +2,28 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:toku_app/models/item_model.dart';
 
-class ItemPharses extends StatelessWidget {
+class ItemPharses extends StatefulWidget {
   ItemPharses({super.key, required this.itemData, required this.color});
 
   PhrasesModel itemData;
   Color color;
+
+  @override
+  State<ItemPharses> createState() => _ItemPharsesState();
+}
+
+class _ItemPharsesState extends State<ItemPharses> {
   AudioPlayer player = AudioPlayer();
+  IconData icon = Icons.play_arrow;
+
+  @override
+  void initState() {
+    player.onPlayerComplete.listen((_) {
+      setState(() {
+        icon = Icons.play_arrow;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +31,10 @@ class ItemPharses extends StatelessWidget {
       height: 70,
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: color,
+        color: widget.color,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          color: color,
+          color: widget.color,
         ),
       ),
       alignment: Alignment.centerLeft,
@@ -34,12 +50,12 @@ class ItemPharses extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  itemData.jpText,
+                  widget.itemData.jpText,
                   style: const TextStyle(
                       fontFamily: 'MFM', color: Colors.white, fontSize: 16),
                 ),
                 Text(
-                  itemData.enText.toLowerCase(),
+                  widget.itemData.enText.toLowerCase(),
                   style: const TextStyle(
                       fontFamily: 'MFR',
                       color: Color.fromARGB(206, 255, 255, 255),
@@ -52,10 +68,12 @@ class ItemPharses extends StatelessWidget {
           IconButton(
             onPressed: () async {
               player.audioCache.prefix = 'assets/sounds/phrases/';
-              await player.play(AssetSource(itemData.sound));
+              await player.play(AssetSource(widget.itemData.sound));
+              icon = Icons.stop;
+              setState(() {});
             },
-            icon: const Icon(
-              Icons.play_arrow,
+            icon: Icon(
+              icon,
               color: Colors.white,
             ),
           ),
