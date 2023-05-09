@@ -3,10 +3,11 @@ import 'package:toku_app/models/item_model.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 class ItemAll extends StatelessWidget {
-  ItemAll({super.key, required this.itemData, required this.kind});
+  ItemAll({super.key, required this.itemData, required this.kind,required this.color});
 
   ItemModel itemData;
   String kind;
+  Color color;
 
   AudioPlayer player = AudioPlayer();
 
@@ -14,14 +15,8 @@ class ItemAll extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(10),
-      decoration: BoxDecoration(boxShadow: [
-        BoxShadow(
-          color: itemData.bgColor.withOpacity(0.3),
-          spreadRadius: 4,
-          blurRadius: 4,
-          offset: const Offset(0, 0), // changes position of shadow
-        ),
-      ], color: itemData.bgColor, borderRadius: BorderRadius.circular(10)),
+      decoration: BoxDecoration(
+          color: color, borderRadius: BorderRadius.circular(10)),
       alignment: Alignment.centerLeft,
       child: Row(
         children: [
@@ -30,8 +25,9 @@ class ItemAll extends StatelessWidget {
             width: 70,
             alignment: Alignment.center,
             decoration: BoxDecoration(
+              border: Border.all(color: color),
               color: const Color(0xffFEF3D7),
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10),
                 bottomLeft: Radius.circular(10),
               ),

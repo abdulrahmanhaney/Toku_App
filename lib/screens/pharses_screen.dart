@@ -12,55 +12,46 @@ class PhrasesScreen extends StatelessWidget {
     PhrasesModel(
       enText: 'Are you coming ?',
       jpText: 'Kimasu ka?',
-      bgColor: KPharsesColor,
       sound: 'are_you_coming.wav',
     ),
     PhrasesModel(
       enText: 'Dont forget to subscribe.',
       jpText: 'Kōdoku suru koto o wasurenaide kudasai.',
-      bgColor: KPharsesColor,
       sound: 'dont_forget_to_subscribe.wav',
     ),
     PhrasesModel(
       enText: 'How are you felling ?',
       jpText: 'Bassai no chōshi wa ikagadesu ka?',
-      bgColor: KPharsesColor,
       sound: 'how_are_you_feeling.wav',
     ),
     PhrasesModel(
       enText: 'I love anime.',
       jpText: 'Watashi wa anime ga daisukidesu.',
-      bgColor: KPharsesColor,
       sound: 'i_love_anime.wav',
     ),
     PhrasesModel(
       enText: 'I love programing',
       jpText: 'Puroguramingu ga daisuki',
-      bgColor: KPharsesColor,
       sound: 'i_love_programming.wav',
     ),
     PhrasesModel(
       enText: 'Programing is easy.',
       jpText: 'Puroguramingu wa kantandesu.',
-      bgColor: KPharsesColor,
       sound: 'programming_is_easy.wav',
     ),
     PhrasesModel(
       enText: 'What is your name ?',
       jpText: 'Namae wa nandesu ka?',
-      bgColor: KPharsesColor,
       sound: 'what_is_your_name.wav',
     ),
     PhrasesModel(
       enText: 'Where are you going ?',
       jpText: 'Doko ni iku no?',
-      bgColor: KPharsesColor,
       sound: 'where_are_you_going.wav',
     ),
     PhrasesModel(
       enText: 'Yes, iam coming.',
       jpText: 'Hai, kimasu.',
-      bgColor: KPharsesColor,
       sound: 'yes_im_coming.wav',
     ),
   ];
@@ -72,7 +63,10 @@ class PhrasesScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: phrasesList.length,
         itemBuilder: (context, index) {
-          return ItemPharses(itemData: phrasesList[index]);
+          return ItemPharses(
+            itemData: phrasesList[index],
+            color: KPharsesColor,
+          );
         },
       ),
     );

@@ -5,29 +5,21 @@ class HomeItem extends StatelessWidget {
       {super.key,
       required this.color,
       required this.text,
-      required this.ScreenId});
+      required this.screenId});
 
   Color color;
   String text;
-  String ScreenId;
+  String screenId;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, ScreenId);
+        Navigator.pushNamed(context, screenId);
       },
       child: Container(
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: color.withOpacity(0.4),
-              spreadRadius: 4,
-              blurRadius: 4,
-              offset: const Offset(0, 0), // changes position of shadow
-            ),
-          ],
           color: color,
           borderRadius: BorderRadius.circular(10),
         ),
@@ -47,7 +39,7 @@ class HomeItem extends StatelessWidget {
             const Spacer(),
             IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, ScreenId);
+                Navigator.pushNamed(context, screenId);
               },
               icon: const Icon(
                 Icons.arrow_right,

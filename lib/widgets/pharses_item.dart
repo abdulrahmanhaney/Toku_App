@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:toku_app/models/item_model.dart';
 
 class ItemPharses extends StatelessWidget {
-  ItemPharses({
-    super.key,
-    required this.itemData,
-  });
+  ItemPharses({super.key, required this.itemData, required this.color});
 
   PhrasesModel itemData;
+  Color color;
   AudioPlayer player = AudioPlayer();
 
   @override
@@ -16,14 +14,13 @@ class ItemPharses extends StatelessWidget {
     return Container(
       height: 70,
       margin: const EdgeInsets.all(10),
-      decoration: BoxDecoration(boxShadow: [
-        BoxShadow(
-          color: itemData.bgColor.withOpacity(0.3),
-          spreadRadius: 4,
-          blurRadius: 4,
-          offset: const Offset(0, 0), // changes position of shadow
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: color,
         ),
-      ], color: itemData.bgColor, borderRadius: BorderRadius.circular(10)),
+      ),
       alignment: Alignment.centerLeft,
       child: Row(
         children: [

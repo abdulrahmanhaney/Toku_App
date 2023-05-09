@@ -22,21 +22,21 @@ class HomeScreen extends StatelessWidget {
           HomeItem(
               color: KNumbersColor,
               text: 'Numbers',
-              ScreenId: NumbersScreen.id),
+              screenId: NumbersScreen.id),
           HomeItem(
             color: KFamilyColor,
             text: 'Family Members',
-            ScreenId: FamilyMembersScreen.id,
+            screenId: FamilyMembersScreen.id,
           ),
           HomeItem(
             color: KColorsColor,
             text: 'Colors',
-            ScreenId: ColorsScreen.id,
+            screenId: ColorsScreen.id,
           ),
           HomeItem(
             color: KPharsesColor,
             text: 'Phrases',
-            ScreenId: PhrasesScreen.id,
+            screenId: PhrasesScreen.id,
           ),
         ],
       ),
