@@ -14,56 +14,56 @@ class ColorsScreen extends StatelessWidget {
       jpText: 'Kuro',
       bgColor: KColorsColor,
       image: 'assets/images/colors/color_black.png',
-      sound: '',
+      sound: 'black.wav',
     ),
     ItemModel(
       enText: 'White',
       jpText: 'Shiro',
       bgColor: KColorsColor,
       image: 'assets/images/colors/color_white.png',
-      sound: '',
+      sound: 'white.wav',
     ),
     ItemModel(
       enText: 'Green',
       jpText: 'Midori',
       bgColor: KColorsColor,
       image: 'assets/images/colors/color_green.png',
-      sound: '',
+      sound: 'green.wav',
     ),
     ItemModel(
       enText: 'Gray',
       jpText: 'Gurē',
       bgColor: KColorsColor,
       image: 'assets/images/colors/color_gray.png',
-      sound: '',
+      sound: 'gray.wav',
     ),
     ItemModel(
       enText: 'Red',
       jpText: 'Aka',
       bgColor: KColorsColor,
       image: 'assets/images/colors/color_red.png',
-      sound: '',
+      sound: 'red.wav',
     ),
     ItemModel(
       enText: 'Yellow',
       jpText: 'Kiiro',
       bgColor: KColorsColor,
       image: 'assets/images/colors/yellow.png',
-      sound: '',
+      sound: 'yellow.wav',
     ),
     ItemModel(
       enText: 'Dusty Yellow',
       jpText: 'Dasutiierō',
       bgColor: KColorsColor,
       image: 'assets/images/colors/color_dusty_yellow.png',
-      sound: '',
+      sound: 'dusty_yellow.wav',
     ),
     ItemModel(
       enText: 'Brown',
       jpText: 'Chairo',
       bgColor: KColorsColor,
       image: 'assets/images/colors/color_brown.png',
-      sound: '',
+      sound: 'brown.wav',
     ),
   ];
 
@@ -74,7 +74,10 @@ class ColorsScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: colorsList.length,
         itemBuilder: (context, index) {
-          return ItemAll(itemData: colorsList[index]);
+          return ItemAll(
+            itemData: colorsList[index],
+            kind: 'colors',
+          );
         },
       ),
     );

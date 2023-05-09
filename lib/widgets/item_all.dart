@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:toku_app/models/item_model.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class ItemAll extends StatelessWidget {
-  ItemAll({
-    super.key,
-    required this.itemData,
-  });
+  ItemAll({super.key, required this.itemData, required this.kind});
 
   ItemModel itemData;
+  String kind;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +62,11 @@ class ItemAll extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(
-            onPressed: () {},
+            onPressed: () async {
+              AudioPlayer player = AudioPlayer();
+              player.audioCache.prefix = 'assets/sounds/$kind/';
+              await player.play(AssetSource(itemData.sound));
+            },
             icon: const Icon(
               Icons.play_arrow,
               color: Colors.white,

@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:toku_app/models/item_model.dart';
 
@@ -8,6 +9,7 @@ class ItemPharses extends StatelessWidget {
   });
 
   PhrasesModel itemData;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,11 @@ class ItemPharses extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(
-            onPressed: () {},
+            onPressed: () async {
+              AudioPlayer player = AudioPlayer();
+              player.audioCache.prefix = 'assets/sounds/phrases/';
+              await player.play(AssetSource(itemData.sound));
+            },
             icon: const Icon(
               Icons.play_arrow,
               color: Colors.white,

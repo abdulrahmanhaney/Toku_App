@@ -14,70 +14,70 @@ class FamilyMembersScreen extends StatelessWidget {
       jpText: 'Ojīsan',
       bgColor: KFamilyColor,
       image: 'assets/images/family_members/family_grandfather.png',
-      sound: 'number_one_sound.mp3',
+      sound: 'grandfather.wav',
     ),
     ItemModel(
       enText: 'Grand Mother',
       jpText: 'O bāchan',
       bgColor: KFamilyColor,
       image: 'assets/images/family_members/family_grandmother.png',
-      sound: 'number_two_sound.mp3',
+      sound: 'grandmother.wav',
     ),
     ItemModel(
       enText: 'Father',
       jpText: 'Chichioya',
       bgColor: KFamilyColor,
       image: 'assets/images/family_members/family_father.png',
-      sound: 'number_three_sound.mp3',
+      sound: 'father.wav',
     ),
     ItemModel(
       enText: 'Mother',
       jpText: 'Hahaoya',
       bgColor: KFamilyColor,
       image: 'assets/images/family_members/family_mother.png',
-      sound: 'number_four_sound.mp3',
+      sound: 'mother.wav',
     ),
     ItemModel(
       enText: 'Older Brother',
       jpText: 'Ani',
       bgColor: KFamilyColor,
       image: 'assets/images/family_members/family_older_brother.png',
-      sound: 'number_four_sound.mp3',
+      sound: 'olderbrother.wav',
     ),
     ItemModel(
       enText: 'Older Sister',
       jpText: 'Ane',
       bgColor: KFamilyColor,
       image: 'assets/images/family_members/family_older_sister.png',
-      sound: 'number_four_sound.mp3',
+      sound: 'oldersister.wav',
     ),
     ItemModel(
       enText: 'Son',
       jpText: 'Musuko',
       bgColor: KFamilyColor,
       image: 'assets/images/family_members/family_son.png',
-      sound: 'number_four_sound.mp3',
+      sound: 'son.wav',
     ),
     ItemModel(
       enText: 'Daughter',
       jpText: 'Musume',
       bgColor: KFamilyColor,
       image: 'assets/images/family_members/family_daughter.png',
-      sound: 'number_four_sound.mp3',
+      sound: 'daughter.wav',
     ),
     ItemModel(
       enText: 'Younger Brother',
       jpText: 'Otōto',
       bgColor: KFamilyColor,
       image: 'assets/images/family_members/family_younger_brother.png',
-      sound: 'number_four_sound.mp3',
+      sound: 'youngerbrother.wav',
     ),
     ItemModel(
       enText: 'Younger Sister',
       jpText: 'Imōto',
       bgColor: KFamilyColor,
       image: 'assets/images/family_members/family_younger_sister.png',
-      sound: 'number_four_sound.mp3',
+      sound: 'youngersister.wav',
     ),
   ];
 
@@ -88,7 +88,10 @@ class FamilyMembersScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: familyMembers.length,
         itemBuilder: (context, index) {
-          return ItemAll(itemData: familyMembers[index]);
+          return ItemAll(
+            itemData: familyMembers[index],
+            kind: 'family_members',
+          );
         },
       ),
     );

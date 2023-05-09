@@ -91,6 +91,7 @@ class NumbersScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             return ItemAll(
               itemData: numbers[index],
+              kind: 'numbers',
             );
           },
         ));
