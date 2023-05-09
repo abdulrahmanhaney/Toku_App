@@ -60,7 +60,7 @@ class ItemPharses extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            width: 8,
+            width: 9,
           )
         ],
       ),
